@@ -1,6 +1,10 @@
 import React,{useState} from 'react'
 import styled, { createGlobalStyle } from 'styled-components/macro'
+import Fade from 'react-reveal/Fade'
+
+
 const Wrap = styled.div`
+
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -72,10 +76,13 @@ function Section(props) {
     
   return (
     <Wrap src={src}>
+        <Fade bottom>
     <ItemText>
         <h1>{head}</h1>
         <p>{para}</p>
     </ItemText>
+    </Fade>
+    <Fade bottom>
     <Buttons>
     <ButtonGroup>
         <LeftButton>{leftBtn}</LeftButton>
@@ -85,6 +92,7 @@ function Section(props) {
     
     <DownArrow src="/images/down-arrow.svg"></DownArrow>
     </Buttons>
+    </Fade>
     </Wrap>
   )
 }
